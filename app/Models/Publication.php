@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $user_id
  * @property string  $title
  * @property string  $body
+ * @property string  $description
  */
 class Publication extends Model
 {

@@ -13,10 +13,17 @@ class PublicationSeeder extends Seeder
         $publications = json_decode(file_get_contents($file), true);
 
         foreach ($publications as $publication) {
-            $newPublication          = new Publication();
-            $newPublication->user_id = $publication['userId'];
-            $newPublication->title   = $publication['title'];
-            $newPublication->body    = $publication['body'];
+            $description = 'impar';
+
+            if (($publication['id'] % 2) == 0) {
+                $description = 'par';
+            }
+
+            $newPublication              = new Publication();
+            $newPublication->user_id     = $publication['userId'];
+            $newPublication->title       = $publication['title'];
+            $newPublication->body        = $publication['body'];
+            $newPublication->description = $description;
             $newPublication->save();
         }
     }
