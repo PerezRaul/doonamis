@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Publications\PublicationsGetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::name('publications')->prefix('publications')->group(function () {
+    Route::get('/', PublicationsGetController::class);
 });

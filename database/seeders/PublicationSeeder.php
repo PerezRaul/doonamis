@@ -15,7 +15,7 @@ class PublicationSeeder extends Seeder
         foreach ($publications as $publication) {
             $description = 'impar';
 
-            if (($publication['id'] % 2) == 0) {
+            if (($publication['id'] % 2) === 0) {
                 $description = 'par';
             }
 
