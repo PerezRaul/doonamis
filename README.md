@@ -31,6 +31,7 @@ This is the main repo of the doonamis project test.
     ```shell
     > composer install
     > php artisan migrate:fresh --seed
+    > npm install
     ```
 
 ## Code analysis
