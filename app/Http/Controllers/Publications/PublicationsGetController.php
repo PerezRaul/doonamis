@@ -16,11 +16,11 @@ final class PublicationsGetController extends Controller
         $publications = Publication::paginate(10);
 
         return new JsonResponse([
-            'data' => $publications->items(),
+            'data'       => $publications->items(),
             'pagination' => [
-                'path' => $publications->path() . '?page=',
+                'path'         => $publications->path() . '?page=',
                 'current_page' => $publications->currentPage(),
-                'last_page' => $publications->lastPage(),
+                'last_page'    => $publications->lastPage(),
             ]
         ], JsonResponse::HTTP_OK);
     }
